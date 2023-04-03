@@ -7,11 +7,14 @@ import java.util.LinkedList;
  */
 public class SinglyLinkedList<T> {
     Node<T> start;
+    Node<T> last;
 
     static class Node <T> {
 
         T value;
         Node<T> next;
+
+
 
         public Node(T value) {
             this.value = value;
@@ -20,7 +23,7 @@ public class SinglyLinkedList<T> {
     }
 
     public static <T> SinglyLinkedList<T> add(SinglyLinkedList<T> list, T value) {
-        Node<T> node = new Node<>(value);
+        Node<T> node = new Node<T>(value);
 
         if(list.start == null) {
             list.start = node;
@@ -57,6 +60,16 @@ public class SinglyLinkedList<T> {
         }
 
         return list;
+    }
+
+    public static <T> int size(SinglyLinkedList<T> list) {
+        Node<T> currentNode = list.start;
+        int count = 0;
+        while (currentNode != null) {
+            currentNode = currentNode.next;
+            count++;
+        }
+        return count;
     }
 
 }
