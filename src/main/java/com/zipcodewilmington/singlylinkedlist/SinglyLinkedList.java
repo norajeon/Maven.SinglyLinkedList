@@ -23,7 +23,16 @@ public class SinglyLinkedList<T> {
 
     }
 
-    public Node<T> get(T value) {
+    public Node<T> get(int index) {
+        int hi = 0;
+        Node<T> current = head;
+        while(current != null) {
+            if (hi == index) {
+                return current;
+            }
+            current = current.getNext();
+            hi++;
+        }
         return null;
     }
 
