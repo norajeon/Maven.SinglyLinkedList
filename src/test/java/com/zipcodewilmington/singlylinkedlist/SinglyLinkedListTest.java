@@ -78,22 +78,20 @@ public class SinglyLinkedListTest {
         Assert.assertEquals(actual, expected);
     }
 
-//    @Test
-//    public void testCopy() {
-//        test.add("");
-//        test.add("whatever");
-//        test.add("hello");
-//
-//        SinglyLinkedList<String> list = test.copy();
-//        //deep copy so want diff addresses
-//        Assert.assertEquals(list.toString(), test.toString());
-//
-//        for(int i = 0; i < list.size(); i++) {
-//            Assert.assertEquals(list.get(i).getData(), test.get(i).getData());
-//
-//        }
+    @Test
+    public void testCopy() {
+        test.add("");
+        test.add("whatever");
+        test.add("hello");
 
-//    }
+        SinglyLinkedList<String> list = test.copy();
+        //deep copy so want diff addresses
+        Assert.assertEquals(list.toString(), test.toString());
+
+        for(int i = 0; i < list.size(); i++) {
+            Assert.assertEquals(list.get(i).getData(), test.get(i).getData());
+        }
+    }
 
     @Test
     public void testSort() {
